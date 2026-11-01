@@ -1,124 +1,172 @@
-# Akshay-Raj__02739__Electricity-Usage-Predictor
+#Akshay Raj_02739_Electricity Usage Predictor
 
-⚡ Electricity Usage Predictor
-A Python project for PS No. 62 that analyses historical monthly electricity consumption, fits a simple linear regression model, predicts usage for a selected future month, estimates the bill, and visualises the trend.
+# ⚡ Electricity Usage Predictor
 
-The original console-based workflow is retained in electricity_predictor.py. A Flask web interface is also included so the project can be used in a browser and deployed as a Python web service on Render.\n\n## 🌐 HTML5 Project Overview\n\nExplore the project's purpose, workflow, regression model, technology stack, and local setup in the standalone HTML5 overview:\n\n**Open Electricity Usage Predictor — Project Overview**
+### Python Programming Project
 
-✨ Features
-Load monthly usage records from a CSV file using Pandas.
-Validate missing, non-numeric, negative, and duplicate values.
-Fit a degree-1 regression line with NumPy polyfit().
-Calculate slope, intercept, and coefficient of determination (R²).
-Predict electricity usage for a user-selected month.
-Estimate the bill at the assignment rate of ₹6 per unit.
-Plot actual usage, the regression line, and the predicted point with Matplotlib.
-Handle the minimum-data case: at least two valid months are required.
-Use the original console application or the browser-based Flask interface.
-🧰 Tech Stack
-Technology	Purpose
-Python 3	Application logic
-Pandas	CSV loading and data validation
-NumPy	Linear regression and R² calculation
-Matplotlib	Actual vs predicted chart
-Flask	Browser-based interface
-Gunicorn	Production WSGI server on Render
-📁 Project Structure
+**Project Name:** Electricity Usage Predictor  
+**Project ID:** 02739  
+**Developed By:** Akshay Raj  
+**Technology:** Python 3
+
+---
+
+## 📌 About the Project
+
+Electricity Usage Predictor is a Python-based application designed to predict future electricity consumption using historical electricity usage data.
+
+The project uses Linear Regression to analyze previous electricity consumption and estimate future electricity usage. It also calculates the estimated electricity bill based on predicted units.
+
+The main purpose of this project is to demonstrate the practical application of Python, data analysis, mathematical calculations, and Machine Learning concepts.
+
+## 🎯 Project Objectives
+
+- Analyze historical electricity consumption.
+- Predict future electricity usage.
+- Implement Linear Regression.
+- Calculate estimated electricity bills.
+- Visualize electricity consumption patterns.
+- Develop practical problem-solving skills using Python.
+
+## ✨ Key Features
+
+- CSV data loading and processing.
+- Electricity consumption analysis.
+- Linear Regression-based prediction.
+- Automatic electricity bill estimation.
+- Data visualization using graphs.
+- Input validation and error handling.
+- Console-based execution.
+- Web application support using Flask.
+
+## 🛠️ Technologies Used
+
+| Technology | Application |
+|---|---|
+| Python 3 | Core programming |
+| Pandas | Data processing |
+| NumPy | Mathematical calculations |
+| Matplotlib | Graph visualization |
+| Flask | Web application |
+| HTML | Web interface |
+
+## ⚡ Electricity Bill Calculation
+
+The project uses an assumed electricity rate of ₹6 per unit.
+
+**Formula:**
+
+Estimated Bill = Predicted Electricity Units × Rate Per Unit
+
+Example:
+
+- Predicted Units = 280
+- Rate = ₹6 per unit
+- Estimated Bill = ₹1,680
+
+## 🧠 Machine Learning Concept
+
+The project uses Linear Regression to predict electricity consumption.
+
+The mathematical equation is:
+
+```text
+Y = mX + C
+```
+
+Where:
+
+- Y = Predicted electricity usage
+- X = Month number
+- m = Slope
+- C = Intercept
+
+The model uses historical data to estimate future electricity consumption.
+
+## 📂 Project Files
+
+```text
 Electricity-Usage-Predictor/
-├── app.py                    # Flask web application (Render entry point)
-├── electricity_predictor.py  # Original command-line application
-├── usage.csv                 # Sample monthly usage data
-├── Demo.csv                  # Assignment test-case examples
-├── Output.csv                # Expected test-case outputs
-├── requirements.txt          # Python dependencies
-├── render.yaml               # Render deployment configuration
-├── .gitignore
+│
+├── app.py
+├── electricity_predictor.py
+├── usage.csv
+├── Demo.csv
+├── Output.csv
+├── requirements.txt
+├── render.yaml
 └── README.md
-🚀 Run Locally
-1. Clone the repository
-git clone https://github.com/Ayushkumarxy/Akshay-Raj__02739__Electricity-Usage-Predictor.git
-cd Akshay-Raj__02739__Electricity-Usage-Predictor
-2. Create and activate a virtual environment
-Windows (PowerShell):
+```
 
-py -m venv .venv
-.venv\Scripts\Activate.ps1
-macOS / Linux:
+## 🚀 Installation and Execution
 
-python3 -m venv .venv
-source .venv/bin/activate
-3. Install dependencies
-python -m pip install --upgrade pip
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/akshay-bit-ops/Akshay-Raj__02739__Electricity-Usage-Predictor2.git
+```
+
+**2. Open the project folder**
+
+```bash
+cd Akshay-Raj__02739__Electricity-Usage-Predictor2
+```
+
+**3. Install dependencies**
+
+```bash
 pip install -r requirements.txt
-4. Start the web application
-python app.py
-Open [https://akshay-raj-02739-electricity-usage.onrender.com) in your browser, upload a CSV file, enter the month to predict, and submit.
+```
 
-Run the original console version
+**4. Run the Python program**
+
+```bash
 python electricity_predictor.py
-The console program reads usage.csv from the project directory.
+```
 
-📄 CSV Format
-Both header and headerless CSV files are supported.
+**5. Run the Flask application**
 
-Month,Units
-1,200
-2,220
-3,240
-4,260
-Or:
+```bash
+python app.py
+```
 
-1,200
-2,220
-3,240
-4,260
-Rules:
+Open the local address displayed in the terminal to access the web application.
 
-The CSV must contain at least two columns: Month and Units.
-Month values must be positive and unique.
-Units must be numeric and cannot be negative.
-At least two valid data rows are required.
-🧮 How the Model Works
-The application fits a straight line:
+## 📚 Learning Outcomes
 
-Units = slope × Month + intercept
-NumPy's polyfit(month, units, 1) calculates the slope and intercept. The fitted values are then used to calculate R²:
+By developing this project, the following concepts can be understood:
 
-R² = 1 - (sum of squared residuals / total sum of squares)
-The bill estimate is:
+1. Python programming.
+2. Data analysis using Pandas.
+3. Numerical operations using NumPy.
+4. Linear Regression.
+5. Data visualization.
+6. CSV file handling.
+7. Flask web development.
+8. Problem-solving and logical thinking.
 
-Estimated Bill = Predicted Units × ₹6
-R² measures how closely the fitted line matches the uploaded historical data. It is not a guarantee of future prediction accuracy. Predictions far beyond the observed months are extrapolations and should be interpreted cautiously. The ₹6 rate is the fixed assignment assumption, not a complete real-world tariff.
+## ⚠️ Project Limitations
 
-🧪 Assignment Test Cases
-The project brief specifies these expected outcomes:
+- Prediction accuracy depends on historical data.
+- Sudden changes in electricity usage may affect predictions.
+- The electricity rate is an assumed value and may differ from actual tariffs.
+- Linear Regression may not capture every consumption pattern.
 
-Test case	Input	Expected result
-Normal input	(1,120), (2,220), (3,240), (4,260)	Slope 20, intercept 180, Month 5 = 280 units, bill ₹1,680
-Minimum input	(1,100), (2,150)	Slope 50, intercept 50, Month 3 = 200 units, bill ₹1,200
-Invalid input	One data row only	Error: at least 2 months are required
-Different valid data	(1,100), (2,120), (3,150), (4,170)	Slope 24, intercept 75, R² ≈ 0.99, Month 6 = 219 units, bill ₹1,314
-Note: the first case above follows the assignment's expected output values. The repository's usage.csv is a separate sample dataset.
+## 🏁 Conclusion
 
-☁️ Deploy on Render
-This repository includes a render.yaml Blueprint configuration.
+The Electricity Usage Predictor demonstrates how Python programming and Machine Learning concepts can be used to solve a real-world problem.
 
-Sign in to Render and choose New → Blueprint (or create a Web Service).
-Connect the GitHub repository: Ayushkumarxy/Akshay-Raj__02739__Electricity-Usage-Predictor.
-If creating a Web Service manually, select:
-Runtime: Python
-Build command: pip install -r requirements.txt
-Start command: gunicorn app:app
-Deploy and wait for the build to finish.
-Open the generated .onrender.com URL and test it with a CSV upload.
-No environment variables or external database are required. The app listens on Render's assigned PORT.
+It provides an approach to analyzing electricity consumption, predicting future usage, and estimating electricity bills.
 
-⚠️ Limitations
-This is a learning project using simple linear regression and a small history of monthly data.
-Real electricity tariffs may include fixed charges, taxes, and slab-based pricing; the app uses the assignment's flat ₹6/unit rate.
-A high R² on a small dataset does not guarantee accurate future forecasts.
-Uploaded CSV data is processed for the request and is not saved as a user account or permanent dataset.
-👨‍💻 Repository
-View source code on GitHub
+This project demonstrates the practical implementation of data analysis, mathematical calculations, and predictive modeling.
 
-Project No.: 62 · Project Title: Electricity Usage Predictor
+---
+
+### Project Credits
+
+**Project Title:** Electricity Usage Predictor  
+**Project ID:** 02739  
+**Developer:** Akshay Raj  
+**GitHub:** akshay-bit-ops
+
+⭐ If you find this project useful, feel free to explore the repository.
