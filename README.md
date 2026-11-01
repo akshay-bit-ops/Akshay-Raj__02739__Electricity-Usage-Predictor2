@@ -1,4 +1,4 @@
-#Akshay Raj_02739_Electricity Usage Predictor
+
 
 # ⚡ Electricity Usage Predictor
 
